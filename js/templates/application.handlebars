@@ -1,0 +1,17 @@
+<header class="clearfix">
+  <h1>{{#link-to 'index'}}What's my weather?{{/link-to}}</h1>
+  <div class="search-wrap">
+  	{{view Ember.TextField id="new-search" placeholder="Search by City, State" valueBinding="search" action="query"}}
+  </div>
+</header>
+
+<section id="main" class="clearfix">
+  {{outlet sidebarnav}}
+  <div id="content">
+  	{{outlet}}
+  </div>
+</section>
+
+<footer>
+  &copy;2013 SweetLabs, Inc.
+</footer>

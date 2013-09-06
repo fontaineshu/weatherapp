@@ -1,0 +1,19 @@
+<article>
+	<h2>{{model.name}}</h2>
+	<ul>
+		<li>Location: {{model.coord.lat}}, {{model.coord.lon}}</li>
+		<li>Clouds: {{model.clouds.all}}</li>
+		<li>Sunrise: {{sunrise}}</li>
+		<li>Sunset: {{sunset}}</li>
+		<li>Wind: {{model.wind.deg}} degrees @ {{model.wind.speed}}</li>
+		<li>Humidity: {{model.main.humidity}}</li>
+		<li>Pressure: {{model.main.pressure}}</li>
+		<li>Current Temperature: {{model.main.temp}}F</li>
+		<li>High: {{model.main.temp_max}}F</li>
+		<li>Low: {{model.main.temp_min}}F</li>
+		{{#each desc in model.weather}}
+			<li>{{desc.description}}</li>
+		{{/each}}
+	</ul>
+</article>
+{{log model}}

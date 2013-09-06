@@ -1,0 +1,13 @@
+
+{
+  "name": "Precompile",
+  "description": "Precompile templates",
+  "version": "1.0.0",
+  "homepage": "http://www.pokki.com",
+  "author": "Fontaine Shu",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-ember-templates": "~0.4.13"
+  }
+}
