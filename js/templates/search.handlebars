@@ -1,1 +1,5 @@
-search
+Search: {{searchTerm}} {{log controller}}
+
+{{#each loc in controller}}
+<div>{{location-detail model=loc}}</div>
+{{/each}}

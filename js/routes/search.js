@@ -1,5 +1,6 @@
+
 // search/ with no arguments
-App.SearchRoute = Ember.Route.extend({
+App.SearchIndexRoute = Ember.Route.extend({ // have to specify the index route specifically, otherwise all /search urls redirect home
 	redirect: function() {
 		this.transitionTo('/');
 	}
@@ -14,7 +15,13 @@ App.SearchQueryRoute = Ember.Route.extend({
 
 	model: function(params) {
 	    Em.Logger.debug('[App.SearchQueryRoute:model]', params);
-	    return Em.A();
+
+	    //this.controllerFor('search').set('query', params.query);
+	    return App.Location.findLocations(params.query);
+	},
+
+	renderTemplate: function() {
+		this.render('search');
 	},
 
 	setupController: function(controller, model) {

@@ -18,8 +18,9 @@ App.Router.reopen({
 App.Router.map(function() {
   	this.resource('location', { path: '/location/:lat_long' });
 
-  	this.resource('search');
-  	this.resource('search.query', { path: '/search/:query' });
+  	this.resource('search', { path: '/search' }, function() {
+  		this.route('query', { path: '/:query' });
+  	});
 });
 
 

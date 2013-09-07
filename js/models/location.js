@@ -46,5 +46,23 @@ App.Location.reopenClass({
         ];
 
         return Em.A(locs);
+	},
+
+	findLocations: function(query) {
+		Em.Logger.debug('[App.Location:findLocations]', query);
+
+		return Ember.$.getJSON('http://api.openweathermap.org/data/2.5/find', {
+			q: query,
+			mode: 'json',
+			units: 'imperial'
+		}).then(function(data) {
+			var locs = Em.A();
+			var list = data.list;
+			for(var i = 0; i < list.length; i++) {
+				list[i].lat_long = list[i].coord.lat + '_' + list[i].coord.lon;
+				locs.pushObject(App.Location.create(list[i]));
+			}
+			return locs;
+		});
 	}
 });

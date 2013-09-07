@@ -3,8 +3,15 @@
 	<ul>
 		<li>Location: {{model.coord.lat}}, {{model.coord.lon}}</li>
 		<li>Clouds: {{model.clouds.all}}</li>
-		<li>Sunrise: {{sunrise}}</li>
-		<li>Sunset: {{sunset}}</li>
+
+		{{#if sunrise}}
+			<li>Sunrise: {{sunrise}}</li>
+		{{/if}}
+
+		{{#if sunset}}
+			<li>Sunset: {{sunset}}</li>
+		{{/if}}
+
 		<li>Wind: {{model.wind.deg}} degrees @ {{model.wind.speed}}</li>
 		<li>Humidity: {{model.main.humidity}}</li>
 		<li>Pressure: {{model.main.pressure}}</li>
