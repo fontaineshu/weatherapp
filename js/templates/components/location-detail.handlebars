@@ -1,26 +1,30 @@
-<article>
-	<h2>{{model.name}}</h2>
-	<ul>
-		<li>Location: {{model.coord.lat}}, {{model.coord.lon}}</li>
-		<li>Clouds: {{model.clouds.all}}</li>
+<h2>{{location.name}}</h2>
+<div class="save" {{action saveLocation}}>
+	{{#if isSaved}}
+		Remove favorite
+	{{else}}
+		Add to favorites
+	{{/if}}
+</div>
+<ul>
+	<li>Location: {{location.coord.lat}}, {{location.coord.lon}}</li>
+	<li>Clouds: {{location.clouds.all}}</li>
 
-		{{#if sunrise}}
-			<li>Sunrise: {{sunrise}}</li>
-		{{/if}}
+	{{#if sunrise}}
+		<li>Sunrise: {{sunrise}}</li>
+	{{/if}}
 
-		{{#if sunset}}
-			<li>Sunset: {{sunset}}</li>
-		{{/if}}
+	{{#if sunset}}
+		<li>Sunset: {{sunset}}</li>
+	{{/if}}
 
-		<li>Wind: {{model.wind.deg}} degrees @ {{model.wind.speed}}</li>
-		<li>Humidity: {{model.main.humidity}}</li>
-		<li>Pressure: {{model.main.pressure}}</li>
-		<li>Current Temperature: {{model.main.temp}}F</li>
-		<li>High: {{model.main.temp_max}}F</li>
-		<li>Low: {{model.main.temp_min}}F</li>
-		{{#each desc in model.weather}}
-			<li>{{desc.description}}</li>
-		{{/each}}
-	</ul>
-</article>
-{{log model}}
+	<li>Wind: {{location.wind.deg}} degrees @ {{location.wind.speed}}</li>
+	<li>Humidity: {{location.main.humidity}}</li>
+	<li>Pressure: {{location.main.pressure}}</li>
+	<li>Current Temperature: {{location.main.temp}}F</li>
+	<li>High: {{location.main.temp_max}}F</li>
+	<li>Low: {{location.main.temp_min}}F</li>
+	{{#each desc in location.weather}}
+		<li>{{desc.description}}</li>
+	{{/each}}
+</ul>

@@ -11,6 +11,7 @@ a, a:hover, a:visited {
 header {
 	padding: 5px 15px;
 	background: #eaeaea;
+	border-bottom: 1px solid #d7d7d7;
 	position: relative;
 	}
 header h1 {
@@ -45,8 +46,8 @@ header .search-wrap input {
 	}
 
 #sidebarnav {
-	margin: 0 20px -185px 0;
-	padding: 15px 15px 200px 15px;
+	margin: 0 20px -1985px 0;
+	padding: 15px 15px 2000px 15px;
 	float: left;
 	width: 100px;
 	background: #f7f7f7;

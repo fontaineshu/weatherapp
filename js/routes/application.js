@@ -15,10 +15,21 @@ App.ApplicationRoute = Ember.Route.extend({
         });
     },
 
+    actions: {
+        saveLocation: function(params) {
+            if(params.save) {
+                this.controllerFor('favorites').addFavorite(params.loc);
+            }
+            else {
+                this.controllerFor('favorites').removeFavorite(params.loc);
+            }
+        }
+    },
+
     setupController: function() {
         Em.Logger.debug('[App.ApplicationRoute:setupController]');
 
         // Setup sidebar items
-        this.controllerFor('favorites').set('content', App.Location.findFavorites());
+        this.controllerFor('favorites').set('model', App.Location.findFavorites());
     }
 });

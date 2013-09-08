@@ -24,8 +24,8 @@ App.SearchQueryRoute = Ember.Route.extend({
 		this.render('search');
 	},
 
-	setupController: function(controller, model) {
+	setupController: function(controller, locations) {
 		Em.Logger.debug('[App.SearchQueryRoute:setupController]', arguments);
-	    this.controllerFor('search').set('model', model);
+	    this.controllerFor('search').set('model', locations);
 	}
 });
