@@ -15,8 +15,7 @@ App.SearchQueryRoute = Ember.Route.extend({
 
 	model: function(params) {
 	    Em.Logger.debug('[App.SearchQueryRoute:model]', params);
-
-	    //this.controllerFor('search').set('query', params.query);
+	    this.controllerFor('search').set('searchTerm', params.query);
 	    return App.Location.findLocations(params.query);
 	},
 
@@ -26,6 +25,7 @@ App.SearchQueryRoute = Ember.Route.extend({
 
 	setupController: function(controller, locations) {
 		Em.Logger.debug('[App.SearchQueryRoute:setupController]', arguments);
+		console.log(this.get('path'));
 	    this.controllerFor('search').set('model', locations);
 	}
 });

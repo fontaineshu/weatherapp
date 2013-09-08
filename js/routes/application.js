@@ -16,6 +16,7 @@ App.ApplicationRoute = Ember.Route.extend({
     },
 
     actions: {
+        // Global action listener
         saveLocation: function(params) {
             if(params.save) {
                 this.controllerFor('favorites').addFavorite(params.loc);

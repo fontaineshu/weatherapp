@@ -187,10 +187,11 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var stack1, hashContexts, hashTypes, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 
-  hashContexts = {'location': depth0};
-  hashTypes = {'location': "ID"};
+  hashContexts = {'location': depth0,'saveLocation': depth0};
+  hashTypes = {'location': "ID",'saveLocation': "STRING"};
   options = {hash:{
-    'location': ("model")
+    'location': ("model"),
+    'saveLocation': ("saveLocation")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['location-detail'] || depth0['location-detail']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "location-detail", options))));
   
