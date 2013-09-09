@@ -1,7 +1,7 @@
 App.FavoritesController = Ember.ArrayController.extend({
 
 	addFavorite: function(loc) {
-		this.get('model').pushObject({name: 'Test' + loc.get('id'), id: loc.get('id')});
+		this.get('model').pushObject(loc);
 	},
 
 	removeFavorite: function(loc) {

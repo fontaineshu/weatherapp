@@ -35,17 +35,7 @@ App.Location.reopenClass({
 	},
 
 	findFavorites: function() {
-
-        var locs = [
-            {
-                name: 'Test1'
-            },
-            {
-                name: 'Test2'
-            }
-        ];
-
-        return Em.A(locs);
+        return Em.A();
 	},
 
 	findLocations: function(query) {

@@ -187,11 +187,12 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var stack1, hashContexts, hashTypes, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 
-  hashContexts = {'location': depth0,'saveLocation': depth0};
-  hashTypes = {'location': "ID",'saveLocation': "STRING"};
+  hashContexts = {'location': depth0,'saveLocation': depth0,'isSaved': depth0};
+  hashTypes = {'location': "ID",'saveLocation': "STRING",'isSaved': "ID"};
   options = {hash:{
     'location': ("model"),
-    'saveLocation': ("saveLocation")
+    'saveLocation': ("saveLocation"),
+    'isSaved': ("isSaved")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['location-detail'] || depth0['location-detail']),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "location-detail", options))));
   
@@ -233,17 +234,26 @@ function program1(depth0,data) {
 Ember.TEMPLATES["sidebar"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, hashTypes, hashContexts, escapeExpression=this.escapeExpression, self=this;
+  var buffer = '', stack1, hashTypes, hashContexts, escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
   
-  var buffer = '', hashTypes, hashContexts;
+  var buffer = '', stack1, stack2, hashTypes, hashContexts, options;
   data.buffer.push("\n	<li class=\"savedlocation\">");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "loc.name", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  options = {hash:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0],types:["STRING","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || depth0['link-to']),stack1 ? stack1.call(depth0, "location", "loc.lat_long", options) : helperMissing.call(depth0, "link-to", "location", "loc.lat_long", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n	");
   return buffer;
+  }
+function program2(depth0,data) {
+  
+  var hashTypes, hashContexts;
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "loc.name", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   }
 
   data.buffer.push("<ul id=\"sidebarnav\">\n	");

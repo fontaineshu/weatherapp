@@ -1,5 +1,5 @@
 <ul id="sidebarnav">
 	{{#each loc in controller}}
-	<li class="savedlocation">{{loc.name}}</li>
+	<li class="savedlocation">{{#link-to 'location' loc.lat_long}}{{loc.name}}{{/link-to}}</li>
 	{{/each}}
 </ul>
