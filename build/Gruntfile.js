@@ -10,9 +10,8 @@
  * 2) install dependencies: from the project root folder run "$> npm install"
  *
  * USAGE:
- * - to build now: from the project root folder run "$> ./build"
- * - to rebuild on file-change: "$> ./build watch"
- * - to precompile: "$> ./build precompile"
+ * - to precompile now: from the build folder run "$> ./build"
+ * - to rebuild on template file-change: "$> ./build run"
  *
  * NOTES: 
  * - this script uses v0.4+ of the popular Grunt task runner (http://gruntjs.com/)
