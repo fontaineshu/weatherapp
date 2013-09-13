@@ -36,7 +36,8 @@ module.exports = function(grunt) {
 
 	    watch: {
 	    	scripts: {
-				files: ['../js/templates/**/*.handlebars'], 
+				files: ['../js/templates/*.handlebars', 
+					'../js/templates/components/*.handlebars'], 
 				tasks: [ 'build' ],
 				options: {
 					debounceDelay: 250
